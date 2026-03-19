@@ -5,7 +5,7 @@
   width: 1140px;
   height: 100%;
   margin: 0 auto;
-  background-color: gold;
+  /* background-color: gold; */
 }
 
 
@@ -100,10 +100,25 @@ main {
   display: flex;
 }
 
+/* 어사이드 */
+
 aside {
   width: 300px;
   height: 100%;
-  background-color: green;
+  /* background-color: green; */
+}
+
+#aside_menu {
+  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  background-color: #2563eb;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 #main_content {
@@ -115,7 +130,7 @@ aside {
 #slider {
   width: 100%;
   height: 350px;
-  background-color: greenyellow;
+  
   margin-top: 40px;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -136,7 +151,7 @@ aside {
   right: auto;
   top: auto;
   bottom: 100px;
-  color: #888
+  color: #888;
 }
 
 .swiper-button-prev {
@@ -145,7 +160,7 @@ aside {
   left: 30px;
   top: auto;
   bottom: 100px;
-  color: #888
+  color: #888;
 }
 
 #slider_txt .swiper-navigation-icon {
@@ -153,7 +168,7 @@ aside {
   height: 50%;
 }
 
-/*  */
+/* swiper css */
 #slider .swiper {
   width: calc(100% - 270px);
   height: 100%;
@@ -164,7 +179,7 @@ aside {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #444;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,10 +216,81 @@ aside {
 /* 풋터 */
 footer {
   width: 100%;
-  height: 180px;
+  /* height: 180px; */
   border-top: 1px solid #ddd;
 }
 
-#footertop .container {
+footer .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footertop ul {
+  display: flex;
+  gap: 20px;
+}
+
+#footertop ul li{
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding-right: 37px;
+  line-height: 1;
+  color: #666;
+  font-size: 14px;
+}
+
+#footertop ul li::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #ccc;
+}
+
+#footertop ul li:last-child::after{
+  display: none;
+}
+
+#footer_menu {
+  margin-left: auto;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+#footer_p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+#footer_p p span {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+  line-height: 1;
+  color: #666;
+}
+
+#footer_p p span::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+}
+#footer_p p span:last-child::after{
+  display: none;
 }

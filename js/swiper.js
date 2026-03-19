@@ -2,7 +2,8 @@ var slider_swiper = new Swiper(".sliderSwiper", {
     navigation: {
         nextEl: "#slider .swiper-button-next",
         prevEl: "#slider .swiper-button-prev",
-    }, pagination: {
+    }, 
+    pagination: {
         el: "#slider .swiper-pagination",
     },
     autoplay: {

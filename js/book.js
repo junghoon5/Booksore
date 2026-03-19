@@ -2,7 +2,7 @@ async function bookData() {
     const params = new URLSearchParams({
         target: "title",
         query: "미움받을 용기",
-        size: 10
+        size: 15
     });
     const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
