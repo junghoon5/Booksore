@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -106,9 +106,67 @@
                 </div>
 
             </div>
-            <div id="search"></div>
-            <div id="best"></div>
-            <div id="banner"></div>
+            <div class="search">
+                <form class="search-container">
+                    <h2 class="search-title">교재 검색</h2>
+
+                    <div class="search-controls">
+                        <select class="search-select">
+                            <option value="book_name">교재명</option>
+                            <option value="author">저자명</option>
+                        </select>
+
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="저자명/ 교재명 검색" class="search-input">
+                            <button type="submit" class="search-btn">
+                                <i class="fas fa-search"></i> </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="best">
+                <div class="best_title">
+                    <h3>공단기 베스트셀러 <span>></span></h3>
+                    <div class="tabs">
+                        <ul id="time">
+                            <li>주간</li>
+                            <li>월간</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                    
+                        <article id="week">
+                            <div class="wiper-slide">Slide 1</div>
+                            <div class="wiper-slide">Slide 2</div>
+                            <div class="wiper-slide">Slide 3</div>
+                            <div class="wiper-slide">Slide 4</div>
+                            <div class="wiper-slide">Slide 5</div>
+                            <div class="wiper-slide">Slide 6</div>
+                            <div class="wiper-slide">Slide 7</div>
+                            <div class="wiper-slide">Slide 8</div>
+                            <div class="wiper-slide">Slide 9</div>
+                            <div class="wiper-slide">Slide 10</div>
+                        </article>
+
+                        <article id="month">
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                            <div class="wiper-slide"></div>
+                        </article>
+                        
+                   
+                
+            </div>
+            <div id="banner"><img src="./img/split_bnr.png" alt="광고"></div>
             <div id="new">
                 <h3>새로 나온 교재</h3>
 
@@ -120,11 +178,9 @@
                         <div class="swiper-slide">Slide 3</div>
                         <div class="swiper-slide">Slide 4</div>
                         <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                        <div class="swiper-slide">Slide 8</div>
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>
