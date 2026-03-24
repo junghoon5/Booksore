@@ -205,18 +205,11 @@ aside ul li a:hover {
 /* slider swiper css */
 
 #slider .swiper-slide{
-  text-align: center;
-  font-size: 18px;
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   padding: 50px ;
+  gap: 20px;
 }
-
-
-
-
-
 
 
 
@@ -225,32 +218,33 @@ aside ul li a:hover {
   width: 100%;
 }
 
-.swiper-button-next, .swiper-button-prev {
-  width: 45px !important;
-  height: 45px !important;
+#slider .swiper-button-next, #slider .swiper-button-prev {
+  width: 45px ;
+  height: 45px ;
   border: 1px solid #eee;
   border-radius: 50%;
   background-color: #fff;
-  color: #a3a3a3 !important;
-  top: auto !important;
-  bottom: 180px !important;
+  color: #a3a3a3 ;
+  top: auto ;
+  bottom: 180px ;
+  
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-  font-size: 10px !important;
+#slider .swiper-button-next:after, #slider .swiper-button-prev:after {
+  font-size: 10px ;
   font-weight: bold;
-  display: block !important;
+  display: block ;
 }
 
 
 
-.swiper-button-next {
-  left: 80px !important;
+#slider .swiper-button-next {
+  left: 80px ;
   right: auto;
  }
 
-.swiper-button-prev {
-  left: 30px !important;
+#slider .swiper-button-prev {
+  left: 30px ;
 }
 
 #slider_txt h2 {
@@ -279,7 +273,24 @@ aside ul li a:hover {
   height: 100%;
 }
 
+.info-box {
+  display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    text-align: left;       
+    gap: 12px;              
+}
 
+#slider .description {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #777;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .swiper-slide {
   text-align: center;
@@ -387,13 +398,40 @@ aside ul li a:hover {
 
 .best_title h3 { font-size: 20px; font-weight: bold; }
 .best_title .tabs { font-size: 13px; color: #999; }
-.best_title .tabs #time { color: #333; margin-right: 8px; display: flex;}
+.best_title .tabs #time { color: #999; margin-right: 8px; display: flex;}
+
+article {
+  display: none;
+  gap: 40px 20px;
+}
+
+#time {
+  gap: 10px;
+}
+
+#time li {
+  cursor: pointer;
+}
+
+#time li.active {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 2px solid #000;
+}
 
 #week {
   flex-wrap: wrap;
   display: flex;
   gap: 40px 20px;
-  
+  padding: 0 50px;
+  height: 100%;
+}
+
+#month {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 40px 20px;
+  display: none;
   padding: 0 50px;
   height: 100%;
 }
@@ -402,6 +440,42 @@ aside ul li a:hover {
   width: calc(20% - 16px);
   display: flex;
   flex-direction: column;
+}
+
+.wiper-slide h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #333333;
+  margin: 12px 0 4px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wiper-slide h6 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #949494;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.price::after{
+  content: "원";
+  margin-left: 1px;
+  color: #333;
 }
 
 /* 광고 */
@@ -414,6 +488,51 @@ aside ul li a:hover {
   width: 100%;
   height: 520px;
   margin-top: 40px;
+  --swiper-navigation-color: #333;
+  --swiper-navigation-size: 12px;
+}
+
+#new_books {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.swiper_controls {
+  display: flex;
+  align-items: center;
+  
+}
+
+#btn-next, 
+#btn-prev {
+    position: static;      
+    display: flex;         
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 22px;
+    border: 1px solid #e0e0e0;
+    margin: 0;            
+    cursor: pointer;
+    background-color: #fff;
+    --swiper-navigation-size: 12px
+    
+    
+}
+
+#btn-next::after, 
+#btn-prev::after {
+    font-size: 10px ;       
+    font-weight: 900;
+    color: #333 ;
+    line-height: 1;
+}
+
+.swiper_controls {
+    display: flex;
+    align-items: center;
 }
 
 #new .swiper {
@@ -431,6 +550,42 @@ aside ul li a:hover {
   height: auto;
 }
 
+.swiper-slide h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #333333;
+  margin: 12px 0 4px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.swiper-slide h6 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #949494;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.swiper-slide p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.swiper-slide p::after{
+  content: "원";
+  margin-left: 1px;
+  color: #333;
+}
+
 /* 풋터 */
 footer {
   width: 100%;
@@ -443,6 +598,7 @@ footer .container {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-top: 24px;
 }
 
 #footertop ul {

@@ -32,7 +32,7 @@ async function fetchBooks(query) {
                     const data = await fetchBooks(query);
 
                     // 해당 섹션 내의 .box 요소 8개 선택
-                    const section = document.querySelector(`#${sectionId}`);
+                    const section = document.querySelector(`#${mainId}`);
                     const boxElements = section.querySelectorAll(".wiper-slide");
 
                     boxElements.forEach((box, i) => {
@@ -55,7 +55,7 @@ async function fetchBooks(query) {
 
         bookData_2();
 
-        const tabItems = document.querySelectorAll('#booktab li');
+        const tabItems = document.querySelectorAll('#time li');
         const tabs = document.querySelectorAll('article');
         const titleList = document.getElementById('titlelist');
 

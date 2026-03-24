@@ -17,17 +17,18 @@ var slider_swiper = new Swiper(".sliderSwiper", {
 // #new swiper
 var new_swiper = new Swiper(".newSwiper", {
     slidesPerView: 5,
-    spaceBetween: 15,
+    spaceBetween: 20,
+    slidesPerGroup: 1,
+    loop: true,
     pagination: {
-        el: "#new .swiper-pagination",
+        el: "#new .fraction",
+        type: "fraction",
         clickable: true,
     },
     navigation: {
-        nextEl: "#new .swiper-button-next",
-        prevEl: "#new .swiper-button-prev",
+        nextEl: "#btn-next",
+        prevEl: "#btn-prev",
     }, 
-    pagination: {
-        el: "#new .swiper-pagination",
-    },
-    slidesPerGroup: 3
+    
+    
 });
