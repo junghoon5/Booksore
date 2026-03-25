@@ -51,8 +51,8 @@ bookData();
 async function bookData_1() {
     const params = new URLSearchParams({
         target: "title",
-        query: "추천 교재",
-        size: 15
+        query: "공단기",
+        size: 14
     });
     const url = `https://dapi.kakao.com/v3/search/book?${params}`;
 
@@ -64,43 +64,40 @@ async function bookData_1() {
             }
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP 오류! 상태 코드: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP 오류!`);
 
         const data = await response.json();
-        console.log(data);
-        // .box 요소 전체 선택
-
-
+        const books = data.documents; 
 
         const boxElements = document.querySelectorAll("#slider .swiper-slide");
-        console.log(boxElements)
-
-        // documents 데이터를 각 box에 대응하여 렌더링
         boxElements.forEach((box, i) => {
-            const doc = data.documents[i];
-
-            if (!doc) return; // 데이터가 부족할 경우 생략
-
-            const thumbsHtml = data.documents.slice(0, 5).map((d, idx) => `
-                <div class="thumb ${idx === i ? 'active' : ''}">
-                    <img src="${d.thumbnail}" alt="thumb">
-                </div>
-            `).join('');
-
-
-
-            // 요소 생성 및 추가
-            box.innerHTML = `<img src="${data.documents[i].thumbnail}">
+            const doc = books[i];
+            if (!doc) return;
+            box.innerHTML = `
+                <img src="${doc.thumbnail}">
                 <div class='info-box'>
-                
-                    <h3>${data.documents[i].title}</h3>
-                    <h6>${data.documents[i].authors}</h6>
-                    <span class="price">${data.documents[i].price.toLocaleString()}</span>
-                    <p class="description">${data.documents[i].contents.substring(0, 120)}</p>
-                </div>
-                    `
+                    <h3>${doc.title}</h3>
+                    <h6>${doc.authors}</h6>
+                    <span class="price">${doc.price.toLocaleString()}</span>
+                    <p class="description">${doc.contents.substring(0, 120)}...</p>
+                </div>`;
+        });
+
+        var slider_swiper = new Swiper(".sliderSwiper", {
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            navigation: {
+                nextEl: "#slider .swiper-button-next",
+                prevEl: "#slider .swiper-button-prev",
+            },
+            pagination: {
+                el: "#slider .swiper-pagination", 
+                clickable: true,
+                renderBullet: function (index, className) {
+                    const imgUrl = books[index] ? books[index].thumbnail : '';
+                    return `<img class="${className} thumb-img" src="${imgUrl}">`;
+                },
+            },
         });
 
     } catch (error) {
@@ -153,6 +150,7 @@ async function bookData_2() {
 
                 // 요소 생성 및 추가
                 box.innerHTML = `<img src="${doc.thumbnail}">
+                        <span class="rank-badge">${i + 1}</span>
                         <h4>${doc.title}</h4>
                         <h6>${doc.authors}</h6>
                         <span class="price">${data.documents[i].price.toLocaleString()}</span>
@@ -216,5 +214,6 @@ window.onload = function () {
     document.addEventListener('DOMContentLoaded', () => {
         bookData_2();
         showTab(0);
+        timeTabs[0].click();
     });
 }

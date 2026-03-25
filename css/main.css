@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+*
 /* 공용 */
 .container {
   width: 1140px;
@@ -175,7 +175,7 @@ aside ul li a:hover {
 
 #main_content {
   width: calc(100% - 300px);
-  
+  margin-top: 40px;
   height: 100%;
   /* background-color: azure; */
 }
@@ -188,6 +188,11 @@ aside ul li a:hover {
   border: 1px solid #ddd;
   border-radius: 15px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  gap: 30px;
+  margin: 0 auto;
   background-color: #fff;
 }
 
@@ -206,12 +211,30 @@ aside ul li a:hover {
 
 #slider .swiper-slide{
   display: flex;
-  align-items: flex-start;
-  padding: 50px ;
-  gap: 20px;
+  align-items: flex-start; 
+  padding: 40px 20px 100px 0;        
+  gap: 30px;
+  padding-bottom: 110px;
 }
 
+#slider .swiper-slide > img {
+  width: 200px !important;
+  height: 300px !important; 
+  object-fit: contain;
+  flex-shrink: 0;          
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08);
+}
 
+#slider .info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 10px;
+  text-align: left;
+  min-width: 0;
+}
 
 .swiper_sliderSwiper {
   flex: 1;
@@ -267,6 +290,45 @@ aside ul li a:hover {
   height: 50%;
 }
 
+#slider .swiper-pagination {
+  position: absolute !important;
+    bottom: 30px !important;
+    right: 20px !important;
+    margin-top: 5px;
+    width: calc(100% - 400px) !important; 
+    
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+}
+
+#slider .swiper-pagination-bullet {
+    width: 18px !important;       
+    height: 78px !important;     
+    min-width: 60px !important;  
+    
+    border-radius: 4px !important;
+    background: none !important;
+    opacity: 0.6 !important;
+    margin: 0 5px !important;
+    overflow: hidden !important;
+    border: 2px solid transparent !important;
+    transition: all 0.3s;
+}
+
+#slider .swiper-pagination-bullet img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important; 
+}
+
+#slider .swiper-pagination-bullet-active {
+    opacity: 1;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 /* swiper css */
 #slider .swiper {
   width: calc(100% - 270px);
@@ -403,6 +465,9 @@ aside ul li a:hover {
 article {
   display: none;
   gap: 40px 20px;
+  
+  
+  margin: 40px auto;
 }
 
 #time {
@@ -435,12 +500,30 @@ article {
   padding: 0 50px;
   height: 100%;
 }
+/* #best slide */
 
 #best .wiper-slide {
   width: calc(20% - 16px);
   display: flex;
   flex-direction: column;
+  
 }
+
+.rank-badge {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #7d8e9e; 
+    color: white;
+    border-radius: 8px; 
+    font-size: 13px;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+}
+
+.wiper-slide
 
 .wiper-slide h4 {
   font-size: 15px;
@@ -453,6 +536,9 @@ article {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 2.8em;
+  line-height: 1.4;
+  margin: 10px 0 5px 0;
 }
 
 .wiper-slide h6 {

@@ -7,6 +7,9 @@ var slider_swiper = new Swiper(".sliderSwiper", {
     pagination: {
         el: "#slider .swiper-pagination",
         clickable: true,
+        renderBullet: function (index, className) {
+            return '<img class="'+ className +'" src="">';
+        },
     },
     autoplay: {
         delay: 3000,
