@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko
-">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +29,10 @@
 
         </div>
         <div id="header_main">
-            <h1><a href="#"><img src="./img/단기북스 로고.png" alt="단기북스"></a></h1>
+            <h1>
+                <a href="#"><img src="./img/단기북스_로고.png" alt="단기북스">
+                </a>
+            </h1>
             <select id="biz_list">
                 <option value="공단기">공단기</option>
                 <option value="기술단기">기술단기</option>
@@ -42,7 +44,7 @@
                 <option value="법무사단기">법무사단기</option>
             </select>
         </div>
-        </div>
+        
         <nav>
             <div class="container">
                 <ul>
@@ -61,7 +63,7 @@
     </header>
 
     <main>
-        <aside>
+        <aside class="left-navigation">
             <div id="aside_menu">
                 단기북스
             </div>
@@ -105,6 +107,14 @@
                 </div>
 
             </div>
+
+            <!-- <aside class="recent-view-sidebar">
+                <div class="recent-box">
+                    <h4>최근 본 상품</h4>
+                    <div class="no-data">내역이<br>없습니다</div>
+                </div>
+            </aside> -->
+
             <div class="search">
                 <form class="search-container">
                     <h2 class="search-title">교재 검색</h2>
@@ -137,6 +147,7 @@
 
 
                 <article id="week">
+                    <h2 class="blind">주간 베스트 리스트</h2>
                     <div class="wiper-slide">Slide 1</div>
                     <div class="wiper-slide">Slide 2</div>
                     <div class="wiper-slide">Slide 3</div>
@@ -150,6 +161,7 @@
                 </article>
 
                 <article id="month">
+                    <h2 class="blind">월간 베스트 리스트</h2>
                     <div class="wiper-slide">Slide 1</div>
                     <div class="wiper-slide">Slide 2</div>
                     <div class="wiper-slide">Slide 3</div>

@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/* 공용 */
+.container {
+  width: 1140px;
+  height: 100%;
+  margin: 0 auto;
+  /* background-color: gold; */
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 160px;
+}
+
+
+#header_top {
+  width: 100%;
+  height: 40px;
+  background-color: #eee;
+}
+
+#login {
+  width: 290px;
+  height: 20px;
+  /* background-color: tomato; */
+}
+
+#login ul {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+#login ul li::after {
+  content: "|";
+  margin: 0 4px;
+}
+
+#login ul li:last-child::after {
+  content: "";
+}
+
+
+#header_top .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+#header_main {
+  width: 1140px;
+  height: 70px;
+  /* background-color: skyblue; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#header_main h1 img {
+  width: 125px;
+  margin-right: 5px;
+}
+
+#biz_list {
+  height: 32px;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+nav .container {
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+}
+
+nav ul {
+  width: 700px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: cyan; */
+}
+
+
+
+
+
+/* 풋터 */
+footer {
+  width: 100%;
+  /* height: 180px; */
+  border-top: 1px solid #ddd;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+#footertop ul {
+  display: flex;
+  gap: 20px;
+}
+
+#footertop ul li{
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding-right: 37px;
+  line-height: 1;
+  color: #666;
+  font-size: 14px;
+}
+
+#footertop ul li::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #ccc;
+}
+
+#footertop ul li:last-child::after{
+  display: none;
+}
+
+#footer_menu {
+  margin-left: auto;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+#footer_p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+#footer_p p span {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+  line-height: 1;
+  color: #666;
+}
+
+#footer_p p span::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+}
+#footer_p p span:last-child::after{
+  display: none;
+}

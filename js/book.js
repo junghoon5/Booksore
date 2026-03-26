@@ -73,7 +73,9 @@ async function bookData_1() {
         boxElements.forEach((box, i) => {
             const doc = books[i];
             if (!doc) return;
+            const bookId = doc.isbn.split(' ')[0];
             box.innerHTML = `
+                
                 <img src="${doc.thumbnail}">
                 <div class='info-box'>
                     <h3>${doc.title}</h3>
