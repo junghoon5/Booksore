@@ -41,7 +41,7 @@
             </select>
         </div>
         
-        <nav>
+        <nav id="main_menu">
             <div class="container">
                 <ul>
                     <li><a href="#">공단기홈</a></li>
@@ -59,7 +59,60 @@
     </header>
 
     <main>
-       
+        <div class="container">
+            <nav class="location">
+                <ul class="location_list">
+                    <li class="location_item"><a href="#">공단기</a></li>
+                    <li class="location_item"><a href="#">단기북스</a></li>
+                    <li class="location_item"><a href="#">국어</a></li>
+                </ul>
+            </nav>
+
+            <section class="row">
+                <div class="image-wrapper">
+                    <div class="book-image" id="bookCover">
+                        <div class="zoom-btn-container">
+                            <button type="button" class="btn-zoom">
+                                <span class="icon-search">🔍</span> 크게보기
+                            </button>
+                        </div>
+                    </div>
+                </div>    
+                <div class="book-info">
+                    <div class="tag-container">
+                        <span class="tag">추천</span>
+                        <span class="tag">무료배송</span>
+                    </div>
+                    <h1 id="bookTitle">로딩 중...</h1>
+                    <div class="price" id="bookPrice"></div>
+                    <div class="option-box">
+                        <div class="option-row">
+                            <label>
+                                <input type="checkbox" disabled> 분철 신청 
+                                <span class="info-icon">ⓘ</span>
+                            </label>
+                            <span class="option-status">분철 불가</span>
+                        </div>
+                    </div>
+                    <dl id="bookMeta">
+                        <div class="meta-item">
+                            <dt>배송비</dt>
+                            <dd>무료배송</dd>
+                        </div>
+                    </dl>
+
+                    <div class="total-amount">
+                        <span>총 상품 금액</span>
+                        <strong id="totalPrice">0원</strong>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button class="btn-cart">장바구니</button>
+                        <button class="btn-purchase">바로 구매하기</button>
+                    </div>
+                </div>
+            </section>
+       </div>
     </main>
 
     <footer>
