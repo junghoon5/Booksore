@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,10 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/sub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
     <header>
         <div id="header_top">
@@ -40,7 +44,7 @@
                 <option value="법무사단기">법무사단기</option>
             </select>
         </div>
-        
+
         <nav id="main_menu">
             <div class="container">
                 <ul>
@@ -71,13 +75,13 @@
             <section class="row">
                 <div class="image-wrapper">
                     <div class="book-image" id="bookCover">
-                        <div class="zoom-btn-container">
+                        <!-- <div class="zoom-btn-container">
                             <button type="button" class="btn-zoom">
                                 <span class="icon-search">🔍</span> 크게보기
                             </button>
-                        </div>
+                        </div> -->
                     </div>
-                </div>    
+                </div>
                 <div class="book-info">
                     <div class="tag-container">
                         <span class="tag">추천</span>
@@ -88,7 +92,7 @@
                     <div class="option-box">
                         <div class="option-row">
                             <label>
-                                <input type="checkbox" disabled> 분철 신청 
+                                <input type="checkbox" disabled> 분철 신청
                                 <span class="info-icon">ⓘ</span>
                             </label>
                             <span class="option-status">분철 불가</span>
@@ -105,14 +109,239 @@
                         <span>총 상품 금액</span>
                         <strong id="totalPrice">0원</strong>
                     </div>
-                    
+
                     <div class="buttons">
                         <button class="btn-cart">장바구니</button>
                         <button class="btn-purchase">바로 구매하기</button>
                     </div>
                 </div>
             </section>
-       </div>
+
+            <div class="teacher-books-header container">
+                <h3>선생님 신규 교재</h3>
+                <button class="btn-notify">
+                    <i class="far fa-bell"></i> 신간 알림 받기
+                </button>
+            </div>
+
+            <div class="teacher-slider-section">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="teacherBookList">
+                    </div>
+                </div>
+
+                <div class="swiper-button-next-custom"><i class="fas fa-chevron-right"></i></div>
+                <div class="swiper-button-prev-custom"><i class="fas fa-chevron-left"></i></div>
+            </div>
+
+
+            <div class="detail-bottom-layout">
+                <div class="detail-content-area">
+                    <nav class="detail-tabs ">
+                        <ul>
+                            <li class="active"><a href="#section-intro">상품정보</a></li>
+                            <li><a href="#section-split">분철 안내</a></li>
+                            <li><a href="#section-delivery">배송/교환/반품</a></li>
+                        </ul>
+                    </nav>
+
+                    <section id="section-intro" class="book-detail-accordion container" class="tab-content">
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>책 소개</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="book-intro-container">
+                                    <div class="book-category-area">
+                                        <h3 class="intro-title">이 책이 속한 분야</h3>
+                                        <ul class="category-list">
+                                            <li>국내도서 <i class="fas fa-chevron-right"></i> 취업/수험서 <i
+                                                    class="fas fa-chevron-right"></i> 공무원 과목별 <i
+                                                    class="fas fa-chevron-right"></i> 공무원 영어</li>
+                                            <li>국내도서 <i class="fas fa-chevron-right"></i> 취업/수험서 <i
+                                                    class="fas fa-chevron-right"></i> 공무원 직군별 <i
+                                                    class="fas fa-chevron-right"></i> 행정직</li>
+                                        </ul>
+                                    </div>
+
+                                    <hr class="divider">
+                                    <div class="book-description">
+                                        <p class="description-highlight">공시 영어 독해 수험서 = 이기다 독해, 우리는 반드시 이긴다!</p>
+                                        <p>
+                                            쎄듀는 대한민국 공무원 수험생들을 위해 ‘공시 영어 한 번 응시로 합격을 이루자!’는 취지로 쎄듀01(공일)을 시작한다.
+                                            이 책은 갈수록 난이도가 높아지고 있는 독해를 완벽히 대비 시켜주기 위해 기획, 집필되었다.
+                                        </p>
+                                        <p>
+                                            이 책의 구성은 5단계로 되어있다. Chapter 도입부에서는 해당 Chapter에서 다룰 내용에 대한 간략한 소개와 도식화로 쉽게 이해
+                                            할 수 있도록 구성되었다.
+                                            이 부분은 특히, Chapter를 다 학습한 뒤 다시 한 번 속독한다면 학습 효과가 배가 될 것이다.
+                                        </p>
+                                        <p class="description-footer">
+                                            이기다 독해는 여러분들에게 공시영어 독해 수험서로 최고의 길잡이가 될 것으로 확신한다. 여러분들이 간절히 원해온 목표를 이뤄내고 다함께
+                                            모여 떼창을 하는 그 날까지 화이팅하자!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>목차</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Introduction<br>
+                                    I. 단락(paragraph)의 기본 이해 <br>
+                                    II. 기출 지문과 선택지의 이해 <br>
+                                    III. 결론: 독해, 이렇게 접근하라! <br><br>
+
+                                    Part I Topic Sentence & Supporting Details<br>
+                                    CHAPTER 1 Exposition <br>
+                                    CHAPTER 2 Persuasion<br>
+                                    CHAPTER 3 Exposition?Persuasion<br>
+                                    CHAPTER 4 Narration<br><br>
+
+                                    Part II Paragraph Unity, Cohesion, Coherence<br>
+                                    CHAPTER 5 Unity (통일성)_흐름 무관 문장 찾기<br>
+                                    CHAPTER 6 Cohesion (응집성)_연결사<br>
+                                    CHAPTER 7 Cohesion?Coherence I (응집성?일관성)_문장 삽입<br>
+                                    CHAPTER 8 Cohesion?Coherence II (응집성?일관성)_글의 순서<br><br>
+
+                                    PART III 단락과 빈칸 추론<br>
+                                    CHAPTER 9 빈칸이 글의 전반부에 있는 경우<br>
+                                    CHAPTER 10 빈칸이 글의 중반부에 있는 경우<br>
+                                    CHAPTER 11 빈칸이 글의 후반부에 있는 경우<br>
+                                    CHAPTER 12 빈칸이 마지막 문장에 있는 경우<br>
+                                    CHAPTER 13 빈칸이 두 개 이상인 경우<br>
+                                    CHAPTER 14 요약문 빈칸 채우기<br><br>
+
+                                    PART IV 단락 전개 방식<br>
+                                    CHAPTER 15 Example<br>
+                                    CHAPTER 16 Enumeration<br>
+                                    CHAPTER 17 Sequence<br>
+                                    CHAPTER 18 Comparison & Analogy<br>
+                                    CHAPTER 19 Contrast & Changing Viewpoints<br>
+                                    CHAPTER 20 Cause & Effect<br>
+                                    CHAPTER 21 Question & Answer<br>
+                                    CHAPTER 22 Problem & Solution<br>
+                                    CHAPTER 23 Myth & Truth<br><br>
+
+                                    PART V 정답률을 높여주는 전략<br>
+                                    CHAPTER 24 내용일치<br>
+                                    CHAPTER 25 내용불일치<br>
+                                    CHAPTER 26 내용추론<br>
+                                    CHAPTER 27 심경, 분위기, 글의 목적<br>
+                                    CHAPTER 28 밑줄추론<br>
+                                    CHAPTER 29 어휘<br>
+                                    CHAPTER 30 복합유형</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>출판사 서평</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p>1. 공시 영어 독해 전략서 = 이기다 독해<br>
+                                    2. 도식화로 쉽게 이해가 되는 구성<br>
+                                    3. 일당백의 역할을 할 수 있는 기출지문만으로 구성<br>
+                                    4. 어휘, 구문 복잡성, 문제 난이도를 종합적으로 고려하여 난이도 순으로 수록<br>
+                                    5. 이기다 독해 100% 소화 + 철저한 복습 + 기출문제집 + 예상 문제집 = 공시 영어 승리</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span>품목정보</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="product-info-table">
+                                    <dl>
+                                        <div class="info-row">
+                                            <dt>ISBN</dt>
+                                            <dd>9791196562335</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt>발행(출시)일자</dt>
+                                            <dd>2018년 12월 24일</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt>쪽수</dt>
+                                            <dd>400쪽</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt>크기</dt>
+                                            <dd>206 * 263 * 19 mm / 917 g</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt>총 권수</dt>
+                                            <dd>1권</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="section-split" class="tab-content info-section" class="tab-content">
+                        <h3 class="section-title">분철 유의사항</h3>
+                        <ul class="info-list">
+                            <li>분철 도서는 주문하신 후 <strong>4일 이내</strong>에 출고됩니다. (평일 기준)</li>
+                            <li>예약 판매 도서 등 보유 재고가 없는 도서는 배송이 지연될 수 있습니다.</li>
+                            <li>PCS 숫자는 스프링 작업 권 수 숫자 입니다. 600페이지가 넘는 경우 분권 됩니다.</li>
+                            <li>분권되는 지점 선택/지정 불가합니다.</li>
+                            <li>정답해설지는 두께와 제본 상태에 따라 스프링작업이 제외될 수 있습니다.</li>
+                            <li>분철 작업에는 투명 표지와 철제 와이어링이 사용됩니다.</li>
+                            <li>분철 도서와 일반 도서를 함께 구매할 경우 분철 도서의 작업 완료일에 맞춰 일괄 출고됩니다.</li>
+                            <li><strong>작업 시작 후에는 취소/반품/환불이 불가</strong>하오니 신중히 선택해 주세요.</li>
+                        </ul>
+                    </section>
+
+                    <section id="section-delivery" class="tab-content info-section" class="tab-content">
+                        <h3 class="section-title">배송/교환/반품</h3>
+
+                        <div class="sub-section">
+                            <h4>배송 안내</h4>
+                            <ul class="info-list">
+                                <li>배송 방법: 택배 배송</li>
+                                <li>배송 지역: 전국 지역</li>
+                                <li>배송 비용: 2,500원 (30,000원 이상 구매 시 무료배송)</li>
+                            </ul>
+                        </div>
+
+                        <div class="sub-section">
+                            <h4>교환 및 반품 안내</h4>
+                            <ul class="info-list">
+                                <li>상품 수령 후 7일 이내 신청 가능합니다.</li>
+                                <li>단순 변심으로 인한 교환/반품 시 배송비는 고객 부담입니다.</li>
+                                <li>상품의 결함이나 오배송의 경우 판매자가 배송비를 부담합니다.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <aside class="sticky-sidebar">
+                    <div class="purchase-card">
+                        <h2 class="book-title-sticky" id="stickyBookTitle">로딩 중...</h2>
+
+                        <div class="price-info">
+                            <span>총 상품 금액</span>
+                            <span class="total-price" id="stickyTotalPrice">0원</span>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn-cart">장바구니</button>
+                            <button class="btn-buy">바로 구매하기</button>
+                        </div>
+                    </div>
+                </aside>
+
+
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -155,5 +384,8 @@
     </footer>
 
     <script src="./js/sub_books.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/sub.js"></script>
 </body>
+
 </html>

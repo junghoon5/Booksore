@@ -2,7 +2,7 @@
 
 /* 공용 */
 .container {
-  width: 1140px;
+  width: 1280px;
   height: 100%;
   margin: 0 auto;
   /* background-color: gold; */
@@ -93,7 +93,7 @@ header {
 /* 메인 */
 
 .location {
-  margin-top: -10px;
+  margin-top: 5px;
 }
 
 .location_list {
@@ -122,10 +122,8 @@ header {
 /* 섹션 */
 
 .container { 
-  max-width: 1000px; 
-  margin: 0 auto; 
-  padding: 20px; 
   font-family: sans-serif; 
+  max-width: 1140px;
 }
 .row { 
   display: flex; 
@@ -162,7 +160,7 @@ header {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.zoom-btn-container {
+/* .zoom-btn-container {
     display: flex;
     justify-content: center;
 }
@@ -187,7 +185,7 @@ header {
 
 .icon-search {
     font-size: 14px;
-}
+} */
 
 /* 책 정보와 가격 */
 
@@ -352,6 +350,484 @@ header {
   background-color: #0066ff;
   border: none;
   color: #fff;
+}
+
+/* 선생님의 책 */
+
+.teacher-books-header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0 15px 0;
+    margin-top: 10px;
+    border-bottom: 2px solid #333;
+}
+
+/* 제목 스타일 */
+.teacher-books-header h3 {
+    font-size: 20px; 
+    font-weight: 700; 
+    color: #111;
+}
+
+.btn-notify {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s; 
+}
+
+.btn-notify:hover {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}
+
+/* 슬라이드 */
+
+.teacher-slider-section {
+    position: relative;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.mySwiper {
+    width: 100%;
+    padding: 20px 0; 
+}
+
+.swiper-slide {
+    display: flex; 
+    height: auto;
+    border: none;
+    border-radius: 0; 
+    padding: 0;
+    background: transparent; 
+}
+
+.book-card-inner {
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+}
+
+.card-img-wrapper {
+    flex: 0 0 130px;
+    margin-right: 20px;
+}
+
+.card-img {
+    width: 100%;
+    height: auto; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+}
+
+.card-info {
+    flex: 1; 
+    text-align: left;
+}
+
+.tag.gray {
+    font-size: 11px;
+    background: #f1f3f5;
+    color: #868e96;
+    padding: 2px 6px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    height: auto; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    color: #111;
+}
+
+.card-authors {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.discount-rate-inner {
+    color: #0066ff;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    font-size: 28px;
+    color: #a8a8a8;
+    transition: color 0.3s;
+}
+
+.swiper-button-prev-custom { left: -30px; } 
+.swiper-button-next-custom { right: -30px; } 
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+    color: #ccc;
+}
+
+/* 상세내용 내비 */
+
+.detail-content-area {
+  width: 70%;
+}
+
+.detail-tabs {
+    border-bottom: 1px solid #eee; 
+    background-color: #fff;
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.detail-tabs ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 0 auto;    
+}
+
+.detail-tabs li {
+    position: relative;
+    padding: 15px 25px; 
+    cursor: pointer;
+}
+
+.detail-tabs li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666; 
+    transition: all 0.2s;
+}
+
+.detail-tabs li.active a {
+    color: #000; 
+    font-weight: 700; 
+}
+
+.detail-tabs li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; 
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background-color: #000; 
+}
+
+.detail-tabs li:hover a {
+    color: #333;
+}
+
+/* 상세내용 */
+
+.detail-bottom-layout {
+    display: flex; 
+    gap: 40px;    
+    max-width: 1280px; 
+    margin: 0 auto;
+    
+    align-items: flex-start;
+}
+
+.detail-content-area {
+    flex: 1;
+}
+
+/* 오른쪽 구매바는 너비를 고정함 */
+.sticky-sidebar {
+    width: 350px;
+    position: sticky;
+    top: 50px; /* 스크롤 시 멈출 위치 */
+    flex-shrink: 0;
+}
+
+.purchase-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.book-title-sticky {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #f5f5f5;
+    margin-bottom: 20px;
+}
+
+.total-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333; /* 가격 강조색 */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-cart, .btn-buy {
+    width: 150px;
+    height: 50px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cart {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.btn-buy {
+    background: #0066ff;
+    color: #fff;
+    border: none;
+}
+
+/* 아코디언 */
+.book-detail-accordion {
+    width: auto;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.accordion-header:hover {
+    color: #0066ff;
+}
+
+.accordion-header i {
+    font-size: 14px;
+    color: #999;
+    transition: transform 0.3s;
+}
+
+.accordion-item.active .accordion-header i {
+    transform: rotate(180deg); 
+}
+
+.accordion-content {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s;
+    background-color: #fafafa;
+    padding: 0 20px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1500px; 
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.info-section {
+    padding: 50px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.sub-section h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 30px 0 15px;
+    color: #333;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    position: relative;
+    padding-left: 12px; /* 점이 들어갈 여백 */
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.book-intro-container {
+    padding: 20px 0;
+}
+
+/* 제목 스타일 */
+.intro-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* 카테고리 스타일 */
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    font-size: 14px;
+    color: #888; /* 연한 회색 */
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-list li i {
+    font-size: 10px;
+    color: #ccc;
+}
+
+/* 구분선 */
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+/* 본문 설명 스타일 */
+.book-description {
+    font-size: 15px;
+    line-height: 1.8; /* 줄 간격을 넓게 주어 가독성 확보 */
+    color: #444;
+}
+
+.book-description p {
+    margin-bottom: 20px;
+}
+
+/* 첫 문장 강조 (이미지 참고) */
+.description-highlight {
+    font-weight: 600;
+    color: #333;
+}
+
+/* 마지막 응원 문구 */
+.description-footer {
+    margin-top: 30px;
+    color: #333;
+}
+
+/* 이미지와 똑같은 아주 작은 점(불릿) 구현 */
+.info-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px; /* 글자 중간 높이 */
+    width: 3px;
+    height: 3px;
+    background-color: #444;
+    border-radius: 50%;
+}
+
+.info-list li strong {
+    color: #000;
+    font-weight: 600;
+}
+
+
+
+/* 품목 정보 전체 영역 */
+.product-info-table {
+    padding: 20px 0;
+    border-top: 1px solid #eee; /* 상단 구분선 (선택사항) */
+}
+
+/* 각 줄(Row) 설정 */
+.info-row {
+    display: flex;
+    padding: 15px 0; /* 줄 사이 간격 */
+    align-items: center;
+}
+
+/* 왼쪽 항목명 (ISBN, 쪽수 등) */
+.product-info-table dt {
+    width: 180px;      /* 제목 너비를 고정하여 데이터 시작점을 일치시킴 */
+    font-size: 16px;
+    font-weight: 700;  /* 이미지처럼 아주 굵게 */
+    color: #000;       /* 완전 검정 */
+    flex-shrink: 0;
+}
+
+/* 오른쪽 실제 데이터 */
+.product-info-table dd {
+    margin: 0;
+    font-size: 16px;
+    color: #666;       /* 이미지와 동일한 연한 회색 */
+    flex: 1;
+}
+
+p {
+  color: #333;
 }
 
 /* 풋터 */

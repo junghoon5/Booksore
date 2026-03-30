@@ -1,5 +1,10 @@
-const KAKAO_API_KEY = "7b2300fc6315bb65035d1a3c7b49b161"; 
-const query = '김기훈 공무원 독해(공단기)'; 
+const KAKAO_API_KEY = "7b2300fc6315bb65035d1a3c7b49b161";
+const query = '김기훈 공무원 독해(공단기)';
+
+window.onload = () => {
+    fetchBookInfo();
+    fetchTeacherBooks();
+};
 
 async function fetchBookInfo() {
     try {
@@ -13,9 +18,9 @@ async function fetchBookInfo() {
         if (!response.ok) throw new Error('네트워크 응답 에러');
 
         const data = await response.json();
-        
+
         if (data.documents && data.documents.length > 0) {
-            displayBook(data.documents[0]); 
+            displayBook(data.documents[0]);
         } else {
             document.getElementById('bookTitle').innerText = "도서 정보를 찾을 수 없습니다.";
         }
@@ -32,10 +37,10 @@ function displayBook(book) {
 
     const isSale = book.sale_price > 0 && book.price > book.sale_price;
     const finalPrice = isSale ? book.sale_price : book.price;
-    
+
     const priceContainer = document.getElementById('bookPrice');
     let priceHTML = "";
-    
+
     if (isSale) {
         const discountRate = Math.round(((book.price - book.sale_price) / book.price) * 100);
         priceHTML = `
@@ -50,7 +55,7 @@ function displayBook(book) {
 
     const metaContainer = document.getElementById('bookMeta');
     const pubDate = new Date(book.datetime).toISOString().split('T')[0];
-    
+
     metaContainer.innerHTML = `
         <div class="meta-item"><dt>배송비</dt><dd>무료배송</dd></div>
         <div class="meta-item"><dt>저자</dt><dd>${book.authors.join(', ')}</dd></div>
@@ -59,6 +64,84 @@ function displayBook(book) {
     `;
 
     document.getElementById('totalPrice').innerText = `${finalPrice.toLocaleString()}원`;
+    syncStickyInfo();
+}
+function syncStickyInfo() {
+    const mainTitle = document.getElementById('bookTitle').innerText;
+    const mainPrice = document.getElementById('totalPrice').innerText;
+
+    const stickyTitle = document.getElementById('stickyBookTitle');
+    const stickyPrice = document.getElementById('stickyTotalPrice');
+
+    if (stickyTitle && stickyPrice) {
+        stickyTitle.innerText = mainTitle;
+        stickyPrice.innerText = mainPrice;
+    }
 }
 
+
 fetchBookInfo();
+
+async function fetchTeacherBooks() {
+    const teacherQuery = '김기훈';
+
+    try {
+        const response = await fetch(`https://dapi.kakao.com/v3/search/book?query=${encodeURIComponent(teacherQuery)}&size=10`, {
+            method: 'GET',
+            headers: {
+                Authorization: `KakaoAK ${KAKAO_API_KEY}`
+            }
+        });
+
+        const data = await response.json();
+        if (data.documents && data.documents.length > 0) {
+            displayTeacherBooks(data.documents);
+            initTeacherSwiper();
+        }
+    } catch (error) {
+        console.error('선생님 교재 로딩 실패:', error);
+    }
+}
+
+function displayTeacherBooks(books) {
+    const listContainer = document.getElementById('teacherBookList');
+
+    listContainer.innerHTML = books.map(book => {
+        const isSale = book.sale_price > 0 && book.price > book.sale_price;
+        const finalPrice = isSale ? book.sale_price : book.price;
+        const discountRateHTML = isSale ? `<span class="discount-rate-inner">${Math.round(((book.price - book.sale_price) / book.price) * 100)}%</span>` : "";
+
+        return `
+            <div class="swiper-slide">
+                <div class="book-card-inner">
+                    <div class="card-img-wrapper">
+                        <img src="${book.thumbnail || './img/no-image.png'}" alt="${book.title}" class="card-img">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">${book.title}</div>
+                        <div class="card-authors">${book.authors.join(', ')} </div>
+                        <div class="card-price">
+                            ${discountRateHTML}
+                            <strong>${finalPrice.toLocaleString()}원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function initTeacherSwiper() {
+    new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+        },
+    });
+}
+
+fetchTeacherBooks();
