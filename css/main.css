@@ -5,7 +5,6 @@
   width: 1140px;
   height: 100%;
   margin: 0 auto;
-  /* background-color: gold; */
 }
 
 
@@ -25,7 +24,6 @@ header {
 #login {
   width: 290px;
   height: 20px;
-  /* background-color: tomato; */
 }
 
 #login ul {
@@ -54,7 +52,6 @@ header {
 #header_main {
   width: 1140px;
   height: 70px;
-  /* background-color: skyblue; */
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -88,7 +85,6 @@ nav ul {
   height: 25px;
   display: flex;
   justify-content: space-between;
-  /* background-color: cyan; */
 }
 
 
@@ -97,9 +93,7 @@ main {
   width: 1140px;
   height: 2200px;
   margin: 0 auto;
-  /* background-color: pink; */
   display: flex;
-  /* justify-content: space-between; */
   align-items: flex-start;
   height: auto;
   min-height: 2200px;
@@ -109,10 +103,7 @@ main {
 
 .left-navigation {
   width: 210px;
-  height: 485px;
-  
   background-color: #fff;
-  /* border-radius: 12px; */
   overflow: hidden;
   
   padding-right: 28px;
@@ -256,9 +247,8 @@ main {
   padding-bottom: 110px;
 }
 
-#slider .swiper-slide > img {
-  width: 200px !important;
-  height: 300px !important; 
+#slider .swiper-slide img {
+  height: 280px; 
   object-fit: contain;
   flex-shrink: 0;          
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.08);

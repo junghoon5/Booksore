@@ -34,8 +34,8 @@ async function bookData() {
             if (!doc) return; // 데이터가 부족할 경우 생략
 
             // 요소 생성 및 추가
-            box.innerHTML = `<img src="${data.documents[i].thumbnail}">
-                    <h3>${data.documents[i].title}</h3>
+            box.innerHTML = `<a href="sub.html"><img src="${data.documents[i].thumbnail}">
+                    <h3>${data.documents[i].title}</h3></a>
                     <h6>${data.documents[i].authors}</h6>
                     <span class="price">${data.documents[i].price.toLocaleString()}</span>
                     `
@@ -67,7 +67,7 @@ async function bookData_1() {
         if (!response.ok) throw new Error(`HTTP 오류!`);
 
         const data = await response.json();
-        const books = data.documents; 
+        const books = data.documents;
 
         const boxElements = document.querySelectorAll("#slider .swiper-slide");
         boxElements.forEach((box, i) => {
@@ -75,8 +75,8 @@ async function bookData_1() {
             if (!doc) return;
             const bookId = doc.isbn.split(' ')[0];
             box.innerHTML = `
-                
-                <img src="${doc.thumbnail}">
+                <a href="sub.html">
+                <img src="${doc.thumbnail}"></a>
                 <div class='info-box'>
                     <h3>${doc.title}</h3>
                     <h6>${doc.authors}</h6>
@@ -93,7 +93,7 @@ async function bookData_1() {
                 prevEl: "#slider .swiper-button-prev",
             },
             pagination: {
-                el: "#slider .swiper-pagination", 
+                el: "#slider .swiper-pagination",
                 clickable: true,
                 renderBullet: function (index, className) {
                     const imgUrl = books[index] ? books[index].thumbnail : '';
@@ -151,9 +151,9 @@ async function bookData_2() {
                 if (!doc) return;
 
                 // 요소 생성 및 추가
-                box.innerHTML = `<img src="${doc.thumbnail}">
+                box.innerHTML = `<a href="sub.html"><img src="${doc.thumbnail}">
                         <span class="rank-badge">${i + 1}</span>
-                        <h4>${doc.title}</h4>
+                        <h4>${doc.title}</h4></a>
                         <h6>${doc.authors}</h6>
                         <span class="price">${data.documents[i].price.toLocaleString()}</span>
                         `
